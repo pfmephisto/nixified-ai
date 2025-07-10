@@ -3,6 +3,7 @@
   fetchair,
 }:
 {
+
   flux1-dev-q4_0 = fetchResource rec {
     name = baseNameOf url;
     url = "https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q4_0.gguf";
@@ -229,7 +230,7 @@
   };
 
   clip_vision_vit_h-upscaler = fetchResource {
-    name = "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors";
+    name = "clip-vision_vit-h.safetensors";
     url = "https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors";
     hash = "sha256-bKlmfaHKngsPdeRrsDD34BH0T4bL+41aNlkPzXUHsDA=";
     passthru = {
@@ -250,15 +251,6 @@
     name = baseNameOf url;
     url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors";
     hash = "sha256-Z3pP41Ht7NQM0NfMIQqGhrWdTlUgcxfxIxnvdGp6Wok=";
-    passthru = {
-      comfyui.installPaths = [ "controlnet" ];
-    };
-  };
-
-  control-lora-rank128-v11p-sd15-canny-fp16 = fetchResource rec {
-    name = baseNameOf url;
-    url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_lora_rank128_v11p_sd15_canny_fp16.safetensors";
-    sha256 = "0srwfsvidbxqia4chpiag0g4485k13y3h51hmmcqavf338s3s1a5";
     passthru = {
       comfyui.installPaths = [ "controlnet" ];
     };
@@ -408,15 +400,6 @@
     };
   };
 
-  ip-adapter-plus-sd15 = fetchResource rec {
-    name = baseNameOf url;
-    url = "https://huggingface.co/h94/IP-Adapter/resolve/018e402774aeeddd60609b4ecdb7e298259dc729/models/ip-adapter-plus_sd15.safetensors";
-    sha256 = "a1c250be40455cc61a43da1201ec3f1edaea71214865fb47f57927e06cbe4996";
-    passthru = {
-      comfyui.installPaths = [ "ipadapter" ];
-    };
-  };
-
   juggernautxl-version6rundiffusion-checkpoints = fetchResource rec {
     name = baseNameOf url;
     url = "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors";
@@ -477,6 +460,24 @@
     hash = "sha256-Ha2znkA6gYxmOKjD44RDfbi66f5KN3CVWStjnZPMgQY=";
     passthru = {
       comfyui.installPaths = [ "checkpoints" ];
+    };
+  };
+
+  control-lora-rank128-v11p-sd15-canny-fp16 = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_lora_rank128_v11p_sd15_canny_fp16.safetensors";
+    sha256 = "0srwfsvidbxqia4chpiag0g4485k13y3h51hmmcqavf338s3s1a5";
+    passthru = {
+      comfyui.installPaths = [ "controlnet" ];
+    };
+  };
+
+  ip-adapter-plus-sd15 = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/h94/IP-Adapter/resolve/018e402774aeeddd60609b4ecdb7e298259dc729/models/ip-adapter-plus_sd15.safetensors";
+    sha256 = "a1c250be40455cc61a43da1201ec3f1edaea71214865fb47f57927e06cbe4996";
+    passthru = {
+      comfyui.installPaths = [ "ipadapter" ];
     };
   };
 
