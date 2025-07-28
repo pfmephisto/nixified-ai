@@ -3,8 +3,7 @@
   fetchFromGitHub,
   ...
 }:
-comfyuiPackages.comfyui.mkComfyUICustomNode
-{
+comfyuiPackages.comfyui.mkComfyUICustomNode {
   pname = "Advanced-ControlNet";
   version = "da254b7";
 
