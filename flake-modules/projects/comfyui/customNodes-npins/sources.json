@@ -65,7 +65,7 @@
       "url": "https://github.com/chrisgoringe/cg-use-everywhere/archive/f72d23a7060db657a2775c4dd1f1a85a3efcf5a8.tar.gz",
       "hash": "0ng70vbl2shn4kzlkchz5mkij9d8d9k25pm2xdbbi1z5xgnmxmdw"
     },
-    "comfyui-colors-mz": {
+    "comfyui-kolors-mz": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -130,7 +130,7 @@
       "url": "https://github.com/cubiq/ComfyUI_essentials/archive/9d9f4bedfc9f0321c19faf71855e228c93bd0dc9.tar.gz",
       "hash": "1xdd1fvid80s1pc9ai05anqrnmk75rc0rf31jcdzia2qarjj8k62"
     },
-    "comfyui-external-tooling": {
+    "comfyui-tooling-nodes": {
       "type": "Git",
       "repository": {
         "type": "GitHub",

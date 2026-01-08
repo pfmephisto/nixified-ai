@@ -28,7 +28,7 @@
       yapf
       wget
       iopath
-      # mediapipe
+      mediapipe
       typer-config
       fastapi
       rich

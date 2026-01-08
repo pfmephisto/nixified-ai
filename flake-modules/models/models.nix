@@ -1,9 +1,108 @@
-{
-  fetchResource,
-  fetchair,
-}:
+{ fetchResource, fetchair }:
 {
 
+  # Flux redux models
+  flux1-dev = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev.safetensors";
+    sha256 = "sha256-RhARW7DIlWBwPIksWawnQvqCHmDvWHGzNJO6VEaDq9c=";
+    passthru = {
+      comfyui.installPaths = [ "diffusion_models" ];
+    };
+  };
+
+  #t5xxl_fp16 = fetchResource rec {
+  #  name = baseNameOf url;
+  #  url = "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors";
+  #  sha256 = "sha256-bkgLCfrgSactKoxfvMuNPpL+vrIzu+nf5yVpWKkWdjU=";
+  #  passthru = {
+  #    comfyui.installPaths = [ "text_encoders" ];
+  #  };
+  #};
+
+  clip_l = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors";
+    sha256 = "sha256-ZgxvWxq66dxJisLSHhNH0qvbDPbAwMhXbNeWSR2abN0=";
+    passthru = {
+      comfyui.installPaths = [ "text_encoders" ];
+    };
+  };
+
+  ae = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/resolve/main/split_files/vae/ae.safetensors";
+    sha256 = "sha256-r8jignLNFds5GbrNtpGM6cHtIulssSxNXtD7qCNSnjg=";
+    passthru = {
+      comfyui.installPaths = [ "vae" ];
+    };
+  };
+
+  flux1-redux-dev = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/Comfy-Org/Flux1-Redux-Dev/resolve/main/flux1-redux-dev.safetensors";
+    sha256 = "sha256-obO9y0vcWM4Eh0ucp3bWH8PpFLtr6rQe+2Pk4mlNykU=";
+    passthru = {
+      comfyui.installPaths = [ "style_models" ];
+    };
+  };
+
+  sigclip_vision_patch14_384 = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors";
+    sha256 = "sha256-H+5QHeq6xy8O0XYQMH1xMePp0eg40DY6o8K5em4D+zM=";
+    passthru = {
+      comfyui.installPaths = [ "clip_vision" ];
+    };
+  };
+
+  v1-5-pruned-emaonly-fp16 = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors?download=true";
+    sha256 = "sha256-6UdqE3KM112Cefbsi611OmahlXyjdaFGTcY7N9tuORY=";
+    passthru = {
+      comfyui.installPaths = [ "checkpoints" ];
+    };
+  };
+
+  sd_xl_turbo_10_fp16 = fetchResource rec {
+    name = baseNameOf url;
+    url = "https://huggingface.co/stabilityai/sdxl-turbo/resolve/main/sd_xl_turbo_1.0_fp16.safetensors";
+    sha256 = "sha256-6GmsfWlCyzJ9aNXtg6QER6rfIODDNY2YssyeJw2w2iY=";
+    passthru = {
+      comfyui.installPaths = [ "checkpoints" ];
+    };
+  };
+
+  control_v11f1p_sd15_depth_fp16 = fetchResource rec {
+    name = "control_v11f1p_sd15_depth_fp16.safetensors";
+    url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors?download=true";
+    sha256 = "sha256-HEp5qlL7Y/YHy5/0eepaoZI7bOshJnvRS2m9Bde2F74=";
+    passthru = {
+      comfyui.installPaths = [ "controlnet" ];
+    };
+  };
+
+  architecturerealmix_v11 = fetchResource rec {
+    name = "architecturerealmix_v11.safetensors";
+    # air = "urn:air:sd1:checkpoint:civitai:84958@431755";
+    url = "https://civitai.com/api/download/models/431755?type=Model&format=SafeTensor&size=full&fp=fp16";
+    sha256 = "sha256-woeH0bQYssgdhJuiyyXPbQ86uzRcghXYp4a4dSJuUXw=";
+    passthru = {
+      comfyui.installPaths = [ "checkpoints" ];
+    };
+  };
+
+  # architecturerealmix_v11 = fetchair {
+  #   name = "architecturerealmix_v11.safetensors";
+  #   air = "urn:air:sd1:checkpoint:civitai:84958@431755";
+  #   sha256 = "sha256-woeH0bQYssgdhJuiyyXPbQ86uzRcghXYp4a4dSJuUXw=";
+  #   passthru = {
+  #     comfyui.installPaths = ["checkpoints"];
+  #   };
+  # };
+
+  # Others
   flux1-dev-q4_0 = fetchResource rec {
     name = baseNameOf url;
     url = "https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q4_0.gguf";
